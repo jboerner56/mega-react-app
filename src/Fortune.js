@@ -9,7 +9,7 @@
 //         };
 //     }
 //     _getFortune = async () {
-//         const response = await Axios.get(``) 
+//         const response = await Axios.get(`'http://fortunecookieapi.com/v1/fortunes?limit=10`) 
 //         console.log(response)
 //     }
 // }

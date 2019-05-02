@@ -5,7 +5,8 @@ import Joke from './Joke';
 import Home from './Home';
 import {
   Route,
-  Switch
+  Switch,
+  Link
 } from 'react-router-dom';
 class App extends React.Component {
   constructor(props) {
@@ -23,7 +24,11 @@ class App extends React.Component {
           {/* <Route path="/weather" component={Weather}/>
           <Route path="/fortune" component={Fortune}/> */}
           <Route path="/joke" component={Joke}/>
+          <Route path="/fortune" component={Fortune}/>
         </Switch>
+        <Link to="/joke">Joke</Link>
+        <Link to="/fortune">Fortune</Link>
+
       </div>
     );
   }
