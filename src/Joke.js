@@ -5,7 +5,7 @@ class Joke extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            fortune: ''
+            joke: ''
         };
     }
     async componentDidMount () {

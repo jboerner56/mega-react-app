@@ -5,20 +5,28 @@ class Weather extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            weather: []
+            weather: {}
         };
     }
-    _getWeather = async () => {
-        const response = await Axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=30041,us&APPID={2402706c5ba24136cc05967bee9e5a2e}`);
-        this.setState({
-            weather: response
-        });
-    }
-    componentDidMount() {
-        this._getWeather();
+
+    async componentDidMount() {
+        const apiKey = `2402706c5ba24136cc05967bee9e5a2e`;
+
+        await Axios.get(`http://api.openweathermap.org/data/2.5/weather?Atlanta,us&APPID=${apiKey}`)
+        .then(response => {
+            console.log('================');
+            
+            console.log(response.data)
+            
+            this.setState({
+                weather: response.data
+            }, () => {
+                console.log('state set')
+            });
+        })
     }
     render() {
-        return(
+        return (
             <div>
                 <h1>Weather</h1>
                 <ul>
